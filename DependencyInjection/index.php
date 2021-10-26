@@ -44,8 +44,6 @@ echo '</ul>';
 
 $content = ob_get_clean();
 
-$page_title = basename(PROJECT_ROOT);
-
 $custom_css = PROJECT_HOST . 'css/custom_rules.css';
 
 require COMMON_VIEWS . 'template.php';

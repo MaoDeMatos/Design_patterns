@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+$page_title = isset($page_title) ? $page_title : basename(PROJECT_ROOT);
+$custom_css = isset($custom_css) ? '<link rel="stylesheet" href="' . $custom_css . '">' : '';
+$content = $content ?: '';
+?><!DOCTYPE html>
 <html lang="en" class="dark">
 
 <head>
@@ -10,9 +14,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?= COMMON_CSS ?>style.min.css">
   <link rel="stylesheet" href="<?= COMMON_CSS ?>media_queries.min.css">
-  <?php if (isset($custom_css)) {
-    echo '<link rel="stylesheet" href="' . $custom_css . '">';
-  } ?>
+  <?= $custom_css ?>
 
   <title><?= $page_title ?></title>
 </head>
