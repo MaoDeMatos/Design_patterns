@@ -6,7 +6,7 @@ use Factory\Interfaces\FactoryI;
 
 class Factory implements FactoryI
 {
-  public function connect(array|string $connections): mixed
+  public function connect(array|string $connections): array|string
   {
     // Get DBs settings
     if ($settings = json_decode(
@@ -27,10 +27,13 @@ class Factory implements FactoryI
         $class::createInstance(
           $databases[$connections]
         );
-        $result[$connections]['pdo'] = $class::getDb();
+        $result[$connections]['db'] = $class::getDb();
         $result[$connections]['_uid'] = spl_object_id($class::getInstance());
       } else // An array is passed
       {
+        // Return an array
+        // $result = [];
+  
         // If the values are present in the settings file
         foreach ($connections as $connection) {
           if (array_key_exists($connection, $databases)) {
@@ -40,7 +43,7 @@ class Factory implements FactoryI
             $class::createInstance(
               $databases[$connection]
             );
-            $result[$connection]['pdo'] = $class::getDb();
+            $result[$connection]['db'] = $class::getDb();
             $result[$connection]['_uid'] = spl_object_id($class::getInstance());
           }
         }

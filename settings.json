@@ -3,7 +3,7 @@
     "mysql": {
       "driver": "mysql",
       "host": "localhost",
-      "dbname": "php_api",
+      "dbname": "design_patterns",
       "port": 3306,
       "user": "root",
       "pass": ""
@@ -11,7 +11,7 @@
     "postgresql": {
       "driver": "postgresql",
       "host": "localhost",
-      "dbname": "php_api",
+      "dbname": "design_patterns",
       "port": 3306,
       "user": "root",
       "pass": ""

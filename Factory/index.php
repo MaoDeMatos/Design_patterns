@@ -10,7 +10,7 @@ echo '<pre>';
 $factory = new Factory();
 
 // PDO connection
-print_r($factory->connect("mysql"));
+print_r($factory->connect("postgresql"));
 echo PHP_EOL;
 
 // Multiple connections
