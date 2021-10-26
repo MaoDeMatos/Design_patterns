@@ -3,7 +3,6 @@
 use DependencyInjection\Controllers\ListController;
 use DependencyInjection\Models\Todo\TodoItem;
 
-require_once '../common_ressources/global_config.php';
 require_once 'config.php';
 
 $listController = new ListController();
@@ -45,5 +44,3 @@ echo '</ul>';
 $content = ob_get_clean();
 
 $custom_css = PROJECT_HOST . 'css/custom_rules.css';
-
-require COMMON_VIEWS . 'template.php';

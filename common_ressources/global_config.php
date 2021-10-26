@@ -1,5 +1,7 @@
 <?php
 
+require 'autoload.php';
+
 define("MAIN_ROOT", $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR);
 define("MAIN_HOST", "/");
 
@@ -11,4 +13,3 @@ define("COMMON_VIEWS", COMMON_RESSOURCES . "Views/");
 
 define("COMMON_CSS", COMMON_PUBLIC . "css/");
 
-require 'autoload.php';

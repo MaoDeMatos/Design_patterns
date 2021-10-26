@@ -1,0 +1,14 @@
+#--------------------------------------------------
+# Options
+#--------------------------------------------------
+
+Options +FollowSymlinks
+RewriteEngine on
+
+#--------------------------------------------------
+# URL Rewriting :
+#--------------------------------------------------
+
+# Routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?req=$1 [L]

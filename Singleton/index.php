@@ -2,7 +2,6 @@
 
 use Singleton\Database;
 
-require_once '../common_ressources/global_config.php';
 require_once 'config.php';
 
 // Error when trying to use constructor
@@ -31,8 +30,6 @@ $database2 = Database::getInstance();
 var_dump($database);
 echo PHP_EOL . 'Object id : ';
 print_r(spl_object_id($database2));
-echo PHP_EOL;
+echo '</pre>';
 
 $content = ob_get_clean();
-
-require COMMON_VIEWS . 'template.php';

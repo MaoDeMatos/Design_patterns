@@ -2,7 +2,6 @@
 
 use Factory\Models\Factory;
 
-require_once '../common_ressources/global_config.php';
 require_once 'config.php';
 
 ob_start();
@@ -23,6 +22,6 @@ print_r($factory->connect([
   "postgresql"
 ]));
 
-$content = ob_get_clean();
+echo '</pre>';
 
-require COMMON_VIEWS . 'template.php';
+$content = ob_get_clean();

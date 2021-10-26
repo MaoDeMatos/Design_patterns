@@ -1,7 +1,7 @@
 <?php
 $page_title = isset($page_title) ? $page_title : basename(PROJECT_ROOT);
 $custom_css = isset($custom_css) ? '<link rel="stylesheet" href="' . $custom_css . '">' : '';
-$content = $content ?: '';
+$content = isset($content) ? $content : 'No body given.';
 ?><!DOCTYPE html>
 <html lang="en" class="dark">
 
@@ -26,7 +26,7 @@ $content = $content ?: '';
   </div>
 
   <div id="page" class="flex f-center">
-    <div class="flex f-column f-center">
+    <div class="flex f-column f-center color-theme-2 rounded">
       <?= $content ?>
     </div>
   </div>
