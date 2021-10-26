@@ -2,16 +2,26 @@
 
 namespace DependencyInjection\Models\Todo;
 
+use DateTimeImmutable;
+
 
 class TodoItem {
+    
     private  $id;
     private  $name;
-    private  $finished = 0;
+    private  $finished;
     private  $createdAt;
+    private  $finshedAt;
     private  $completed;
     
-    
-
+ 
+    public function __construct()
+    {
+        
+        $this->createdAt = new DateTimeImmutable();
+        $this->finshedAt = new DateTimeImmutable();
+        $this->finished = false;
+    }
 
     /**
      * Get the value of id
@@ -23,6 +33,17 @@ class TodoItem {
         return $this->id;
     }
 
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
     /**
      * Get the value of finished
      */ 
@@ -99,6 +120,28 @@ class TodoItem {
     public function setCompleted($completed)
     {
         $this->completed = $completed;
+
+        return $this;
+    }
+
+    
+
+    /**
+     * Get the value of finshedAt
+     */ 
+    public function getFinshedAt()
+    {
+        return $this->finshedAt;
+    }
+
+    /**
+     * Set the value of finshedAt
+     *
+     * @return  self
+     */ 
+    public function setFinshedAt($finshedAt)
+    {
+        $this->finshedAt = $finshedAt;
 
         return $this;
     }
