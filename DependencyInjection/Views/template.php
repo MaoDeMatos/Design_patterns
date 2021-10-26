@@ -22,8 +22,14 @@
   </div>
 
   <div id="page" class="flex f-center">
-    <div>
-      <ul id="todo-list" class="flex f-column f-center">
+    <div class="flex f-column f-center">
+      <ul id="todo-list">
+        <li class="highlighted">
+          <span class="one">Id</span>
+          <span class="two">Creation date</span>
+          <span class="three">Task</span>
+          <span class="four">Done ?</span>
+        </li>
         <?= $content ?>
       </ul>
     </div>

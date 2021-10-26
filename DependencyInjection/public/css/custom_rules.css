@@ -1,0 +1,21 @@
+#todo-list li {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+#todo-list li {
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+}
+.one {
+  grid-column: 1 / 1;
+}
+.two {
+  grid-column: 2 / 4;
+}
+.three {
+  grid-column: 5 / 8;
+}
+.four {
+  grid-column: 8 / 8;
+}

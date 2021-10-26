@@ -15,13 +15,13 @@ class TodoItem {
     private  $completed;
     
  
-    public function __construct($name)
+    public function __construct($name, bool $finished = false)
     {
         
         $this->name = $name;
         $this->createdAt = new DateTimeImmutable();
         $this->finshedAt = new DateTimeImmutable();
-        $this->finished = false;
+        $this->finished = $finished;
     }
 
     /**
