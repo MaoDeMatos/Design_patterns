@@ -10,18 +10,23 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/DependencyInjection/public/css/style.min.css">
   <link rel="stylesheet" href="/DependencyInjection/public/css/custom_rules.css">
+  <link rel="stylesheet" href="/DependencyInjection/public/css/media_queries.min.css">
 
   <title>Dependency Injection</title>
 </head>
 
 <body class="color-theme-1">
   <div id="sidebar" class="color-theme-2 flex f-center f-column">
-    <h2 class="highlighted">SideBar</h2>
+    <h2 class="highlighted">Dependency Injection : Todo List</h2>
     <nav class="main-nav"></nav>
   </div>
 
   <div id="page" class="flex f-center">
-    <div><?= $content ?></div>
+    <div>
+      <ul id="todo-list" class="flex f-column f-center">
+        <?= $content ?>
+      </ul>
+    </div>
   </div>
 </body>
 

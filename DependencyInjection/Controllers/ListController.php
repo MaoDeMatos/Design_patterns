@@ -17,4 +17,9 @@ class ListController
   {
     $this->itemsList[] = $item;
   }
+  
+  public function removeItem(int $itemId)
+  {
+    $this->itemsList[] = $itemId;
+  }
 }

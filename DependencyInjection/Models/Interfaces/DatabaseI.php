@@ -2,6 +2,7 @@
 
 namespace DependencyInjection\Models\Interfaces;
 
-interface DatabaseI {
-
+interface DatabaseI
+{
+  public static function connect(array $settings);
 }

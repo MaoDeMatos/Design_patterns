@@ -24,7 +24,7 @@ abstract class Database implements DatabaseI
     }
   }
 
-  protected static function connect(array $settings)
+  public static function connect(array $settings)
   {
     // $db = new \PDO(
     //   $settings['driver']
