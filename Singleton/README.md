@@ -1,4 +1,4 @@
-## Factory example
+## Singleton example
 
 ### Tasks repartition
 
