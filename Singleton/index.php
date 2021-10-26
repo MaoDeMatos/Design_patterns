@@ -1,6 +1,8 @@
 <?php
 
-require_once "Database.php";
+use Singleton\Database;
+
+require_once '../common_ressources/global_config.php';
 
 // Output formatting
 echo '<pre>';

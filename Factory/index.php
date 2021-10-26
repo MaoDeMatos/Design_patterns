@@ -2,10 +2,9 @@
 
 use Factory\Models\Factory;
 
-require $_SERVER['DOCUMENT_ROOT'] . '\autoload.php';
+require_once '../common_ressources/global_config.php';
 
 echo '<pre>';
-// print_r(file_exists($_SERVER['DOCUMENT_ROOT'] . '\autoload.php'));
 
 $factory = new Factory();
 
