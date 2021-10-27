@@ -2,15 +2,15 @@
 
 namespace Observer;
 
-class Subject{
+class Subject implements \SplSubject {
 
     public string $message;
-    private \SplSubject $observers;
+    private \SplObjectStorage $observers;
 
 
     public function __construct()
     {
-        $this->observers = new \SplSubject();
+        $this->observers = new \SplObjectStorage();
     }
 
 

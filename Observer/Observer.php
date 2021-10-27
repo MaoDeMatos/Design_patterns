@@ -6,6 +6,8 @@ class Observer implements \SplObserver
 {
   public function update(\SplSubject $subject)
   {
-    echo $subject->getMessage();
+    if ($subject instanceof Subject) {
+      echo $subject->getMessage() . PHP_EOL;
+    }
   }
 }
