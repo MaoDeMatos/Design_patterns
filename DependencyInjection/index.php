@@ -3,7 +3,7 @@
 use DependencyInjection\Controllers\ListController;
 use DependencyInjection\Models\Todo\TodoItem;
 
-require $_SERVER['DOCUMENT_ROOT'] . '\autoload.php';
+require_once 'config.php';
 
 $listController = new ListController();
 
@@ -15,13 +15,19 @@ $itemsFromDb = [
   '5' => new TodoItem('Très original, bravo'),
 ];
 
-$listController->addItems($itemsFromDb);
-$todoList = $listController->getItemsList();
-
+// Display informations
 ob_start();
 
-// Display informations
-foreach ($todoList as $key => $value) {
+?><ul id="todo-list">
+  <li class="highlighted">
+    <span class="one">Id</span>
+    <span class="two">Creation date</span>
+    <span class="three">Task</span>
+    <span class="four">Done ?</span>
+  </li>
+<?php
+
+foreach ($itemsFromDb as $key => $value) {
   $createdAt = $value->getCreatedAt();
   echo '<li>';
   echo '<span class="one">#' . $key . ' | </span><span class="two"> | ';
@@ -32,7 +38,8 @@ foreach ($todoList as $key => $value) {
   print_r($value->getFinished());
   echo '</span></li>';
 }
+echo '</ul>';
 
 $content = ob_get_clean();
 
-require 'Views/template.php';
+$custom_css = PROJECT_HOST . 'css/custom_rules.css';
