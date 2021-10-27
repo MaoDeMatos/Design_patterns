@@ -1,22 +1,29 @@
 <?php
 
+namespace Observer;
 
 class Subject{
 
     public string $message;
-    private ObserversInterface $observers;
+    private \SplSubject $observers;
 
 
     public function __construct()
     {
-        $this->observers = [];
+        $this->observers = new \SplSubject();
     }
 
 
-    public function attach(\ObserversInterface $observer): void
+    public function attach(\SplObserver $observer): void
     {
         echo "Subject: Attached an observer.\n";
-        $this->observers[]=$observer;
+        $this->observers->attach($observer);
+    }
+
+    public function detach(\SplObserver $observer): void
+    {
+        $this->observers->detach($observer);
+        echo "Subject: Detached an observer.\n";
     }
 
 
