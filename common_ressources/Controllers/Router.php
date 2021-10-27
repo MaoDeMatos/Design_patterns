@@ -16,7 +16,8 @@ class Router implements Singleton
     "Singleton",
     "Factory",
     "DependencyInjection",
-    "Observer"
+    "Observer",
+    "Strategy"
   ];
 
   protected function __construct()
