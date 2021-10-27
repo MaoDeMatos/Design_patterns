@@ -3,7 +3,7 @@ $page_title = isset($page_title) ? $page_title : basename(PROJECT_ROOT);
 $custom_css = isset($custom_css) ? '<link rel="stylesheet" href="' . $custom_css . '">' : '';
 $content = isset($content) && !empty($content) ? $content : 'No body given.';
 ?><!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
 
 <head>
   <meta charset="UTF-8">
