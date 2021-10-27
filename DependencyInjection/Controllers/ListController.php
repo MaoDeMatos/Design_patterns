@@ -2,28 +2,28 @@
 
 namespace DependencyInjection\Controllers;
 
-use DependencyInjection\Models\Todo\TodoItem;
-
 class ListController
 {
   public $itemsList = [];
 
-  public function getItemsList()
+  public function getItemsList(): array
   {
     return $this->itemsList;
   }
 
-/**
- * dependency injection
- *
- * @param TodoItem $item
- * @return void
- */
-  public function addItem(TodoItem $item)
+  /**
+   * dependency injection
+   *
+   * @param array $item Contains todoItem object
+   * @return void
+   */
+  public function addItems(array $items)
   {
-    $this->itemsList[] = $item;
+    foreach ($items as $item) {
+      $this->itemsList[] = $item;
+    }
   }
-  
+
   public function removeItem(int $itemId)
   {
     $this->itemsList[] = $itemId;

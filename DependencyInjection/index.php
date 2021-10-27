@@ -6,7 +6,6 @@ use DependencyInjection\Models\Todo\TodoItem;
 require $_SERVER['DOCUMENT_ROOT'] . '\autoload.php';
 
 $listController = new ListController();
-$todoList = $listController->getItemsList();
 
 // Items should come from a file or a db
 $itemsFromDb = [
@@ -16,10 +15,13 @@ $itemsFromDb = [
   '5' => new TodoItem('Très original, bravo'),
 ];
 
+$listController->addItems($itemsFromDb);
+$todoList = $listController->getItemsList();
+
 ob_start();
 
 // Display informations
-foreach ($itemsFromDb as $key => $value) {
+foreach ($todoList as $key => $value) {
   $createdAt = $value->getCreatedAt();
   echo '<li>';
   echo '<span class="one">#' . $key . ' | </span><span class="two"> | ';
