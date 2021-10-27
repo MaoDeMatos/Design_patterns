@@ -12,13 +12,7 @@ class Router implements Singleton
 {
   protected static string $req = '';
   protected static Router $instance;
-  protected static $projects = [
-    "Singleton",
-    "Factory",
-    "DependencyInjection",
-    "Observer",
-    "Strategy"
-  ];
+  protected static $projects = [];
 
   protected function __construct()
   {
@@ -43,8 +37,25 @@ class Router implements Singleton
     return static::$req;
   }
 
+  protected static function setProjects()
+  {
+    $directories = [];
+
+    // Get only the name of the directories (glob returns absolute paths)
+    foreach (glob(MAIN_ROOT . '*', GLOB_ONLYDIR) as $key => $value) {
+      $directories[$key] = basename($value);
+    }
+
+    // Remove common_ressources as it's not a project
+    if (($key = array_search("common_ressources", $directories)) !== false) {
+      unset($directories[$key]);
+    }
+    static::$projects = $directories;
+  }
+
   protected static function route()
   {
+    static::setProjects();
     static::setReq();
     $route = static::getReq();
     // Route is in the projects array
@@ -67,21 +78,9 @@ class Router implements Singleton
     // Output formatting
     echo "<pre>";
 
-    $directories = [];
-
-    // Get only the name of the directories (glob returns absolute paths)
-    foreach (glob(MAIN_ROOT . '*', GLOB_ONLYDIR) as $key => $value) {
-      $directories[$key] = basename($value);
-    }
-
-    // Remove common_ressources as it's not a project
-    if (($key = array_search("common_ressources", $directories)) !== false) {
-      unset($directories[$key]);
-    }
-
     // Display the result
     echo '<ul id="projects-list">';
-    foreach ($directories as $key => $value) {
+    foreach (static::$projects as $value) {
       echo '<li><a href="/' . $value . '/">' . $value . '</a></li>';
     }
     echo '</ul></pre>';
