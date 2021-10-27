@@ -1,12 +1,16 @@
 <?php
 
-require_once "Database.php";
+use Singleton\Database;
 
-// Output formatting
-echo '<pre>';
+require_once 'config.php';
 
 // Error when trying to use constructor
 // $singleton = new Singleton();
+
+ob_start();
+
+// Output formatting
+echo '<pre>';
 
 // New singleton
 Database::createInstance();
@@ -26,4 +30,6 @@ $database2 = Database::getInstance();
 var_dump($database);
 echo PHP_EOL . 'Object id : ';
 print_r(spl_object_id($database2));
-echo PHP_EOL;
+echo '</pre>';
+
+$content = ob_get_clean();

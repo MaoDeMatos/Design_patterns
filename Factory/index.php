@@ -2,11 +2,14 @@
 
 use Factory\Models\Factory;
 
-require $_SERVER['DOCUMENT_ROOT'] . '\autoload.php';
+require_once 'config.php';
 
+ob_start();
+
+// Output formatting
 echo '<pre>';
-// print_r(file_exists($_SERVER['DOCUMENT_ROOT'] . '\autoload.php'));
 
+// New factory
 $factory = new Factory();
 
 // PDO connection
@@ -18,3 +21,7 @@ print_r($factory->connect([
   "mysql",
   "postgresql"
 ]));
+
+echo '</pre>';
+
+$content = ob_get_clean();

@@ -10,7 +10,7 @@ class Factory implements FactoryI
   {
     // Get DBs settings
     if ($settings = json_decode(
-      file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/settings.json"),
+      file_get_contents(COMMON_RESSOURCES . "settings.json"),
       true
     )) {
       $databases = $settings['databases'];

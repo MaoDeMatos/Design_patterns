@@ -1,5 +1,7 @@
 <?php
 
+namespace Singleton;
+
 class Database
 {
   public static $db;
