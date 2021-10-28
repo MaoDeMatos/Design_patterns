@@ -1,4 +1,4 @@
-## Singleton example
+## Adapter example
 
 ### Tasks repartition
 
