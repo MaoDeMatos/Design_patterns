@@ -1,6 +1,6 @@
 <?php
 
-namespace Strategy;
+namespace Strategy\Strategies;
 
 class SubstractNumbers implements StrategyI
 {

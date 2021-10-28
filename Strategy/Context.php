@@ -2,6 +2,8 @@
 
 namespace Strategy;
 
+use Strategy\Strategies\StrategyI;
+
 class Context
 {
   private StrategyI $strategy;

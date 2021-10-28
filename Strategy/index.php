@@ -1,9 +1,9 @@
 <?php
 
-use Strategy\AddNumbers;
-use Strategy\SubstractNumbers;
-use Strategy\MultiplyNumbers;
-use Strategy\DivideNumbers;
+use Strategy\Strategies\AddNumbers;
+use Strategy\Strategies\SubstractNumbers;
+use Strategy\Strategies\MultiplyNumbers;
+use Strategy\Strategies\DivideNumbers;
 use Strategy\Context;
 
 require 'config.php';
