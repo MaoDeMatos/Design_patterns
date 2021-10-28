@@ -8,6 +8,6 @@ class Project implements RouteI
 {
   public static function render($project) {
     require MAIN_ROOT . $project . '/index.php';
-    require COMMON_VIEWS . 'template.php';    
+    require COMMON_VIEWS . 'template.php';
   }
 }

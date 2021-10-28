@@ -1,5 +1,5 @@
 <?php
-$color_theme = isset($color_theme) ? $color_theme : 'light';
+$color_theme = isset($GLOBALS['color_theme']) ? $GLOBALS['color_theme'] : 'light';
 $page_title = isset($page_title) ? $page_title : basename(PROJECT_ROOT);
 $custom_css = isset($custom_css) ? '<link rel="stylesheet" href="' . $custom_css . '">' : '';
 $custom_js = isset($custom_js) ? '<link rel="stylesheet" href="' . $custom_js . '">' : '';

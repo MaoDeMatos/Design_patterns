@@ -4,5 +4,5 @@ namespace Command;
 
 interface CommandI
 {
-  public function execute($string);
+  public function execute();
 }
