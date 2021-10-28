@@ -4,8 +4,8 @@
 
 #### Mao
 
-Made the strategies.
+`Strategies` related classes
 
 #### Clément
 
-Made the index and the context.
+`Context` class

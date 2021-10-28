@@ -2,5 +2,10 @@
 
 ### Tasks repartition
 
-Mao copied his default frontend, the database from the singleton design pattern example and made `index.php` file.<br/>
-Mouctar did the TodoItem class and the ListController's methods.
+#### Mao
+
+Copied the database from the singleton design pattern example and made the `index.php` file
+
+#### Mouctar
+
+`TodoItem` class and `ListController` methods

@@ -2,4 +2,8 @@
 
 ### Tasks repartition
 
-We did together the structure and Mao coded it with PHP.
+We did together the structure
+
+#### Mao
+
+Coded with `PHP`
