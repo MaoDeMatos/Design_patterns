@@ -1,4 +1,4 @@
-## Singleton example
+## Command example
 
 ### Tasks repartition
 
