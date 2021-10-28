@@ -1,9 +1,11 @@
 <?php
+$color_theme = isset($color_theme) ? $color_theme : 'light';
 $page_title = isset($page_title) ? $page_title : basename(PROJECT_ROOT);
 $custom_css = isset($custom_css) ? '<link rel="stylesheet" href="' . $custom_css . '">' : '';
+$custom_js = isset($custom_js) ? '<link rel="stylesheet" href="' . $custom_js . '">' : '';
 $content = isset($content) && !empty($content) ? $content : 'No body given.';
 ?><!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en" class="<?= $color_theme ?>">
 
 <head>
   <meta charset="UTF-8">
@@ -30,6 +32,8 @@ $content = isset($content) && !empty($content) ? $content : 'No body given.';
       <?= $content ?>
     </div>
   </div>
+
+<?= $custom_js ?>
 </body>
 
 </html>
