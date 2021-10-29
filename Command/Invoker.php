@@ -2,6 +2,8 @@
 
 namespace Command;
 
+use Command\Commands\CommandI;
+
 class Invoker
 {
   
