@@ -1,8 +1,10 @@
 <?php
 
-namespace Command;
+namespace Command\Commands;
 
-class ShowTextCommand implements CommandI
+use Command\Receivers\Receiver;
+
+class LightCommand implements CommandI
 {
   protected Receiver $receiver;
   protected string $string;
@@ -15,6 +17,6 @@ class ShowTextCommand implements CommandI
 
   public function execute()
   {
-    $this->receiver->printSomething($this->string);
+    $this->receiver->setTheme($this->string);
   }
 }

@@ -2,6 +2,10 @@
 
 namespace Command;
 
+use Command\Receivers\Receiver;
+use Command\Commands\LightCommand;
+use Command\Commands\ShowTextCommand;
+
 require_once 'config.php';
 
 ob_start();
